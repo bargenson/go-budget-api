@@ -20,5 +20,5 @@ func (ctlr *budgetsController) getBudgets(w http.ResponseWriter, r *http.Request
 
 func AddBudgetsController(r *mux.Router) {
 	ctlr := new(budgetsController)
-	r.HandleFunc("/", ctlr.getBudgets).Methods("GET")
+	r.Methods("GET").HandlerFunc(ctlr.getBudgets)
 }

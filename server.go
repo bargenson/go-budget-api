@@ -7,6 +7,6 @@ import (
 
 func newServer(db *database) *mux.Router {
 	router := mux.NewRouter()
-  routes.AddBudgetsController(router)
+  routes.AddBudgetsController(router.PathPrefix("/budgets").Subrouter())
   return router
 }
